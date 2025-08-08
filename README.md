@@ -1,96 +1,68 @@
 # Credit Card Fraud Detection
 
+**Notebook:** `creadit_card_fraud.ipynb`  
 **Author:** IT21197246 – Abeykoon A.M.Y.V.B
 
 ---
 
-## Table of Contents
+## 📖 Overview
 
-1. [Project Overview](#project-overview)  
-2. [Dataset](#dataset)  
-3. [Dependencies](#dependencies)  
-4. [Notebook Structure](#notebook-structure)  
-5. [Usage](#usage)  
-6. [Results & Insights](#results--insights)  
-7. [License](#license)
+This notebook walks through the full pipeline for detecting credit card fraud using the Kaggle [Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud) dataset. The analysis covers:
 
----
-
-## Project Overview
-
-This notebook walks through an end-to-end machine learning pipeline to detect fraudulent credit-card transactions. It covers:
-
-- Data loading and exploratory analysis  
-- Handling class imbalance with SMOTE  
-- Feature scaling  
-- Training and hyperparameter tuning of a Logistic Regression model  
-- Threshold analysis and model evaluation  
-- Visualization of performance metrics (confusion matrix, ROC and precision–recall curves)
+1. **Data Loading & Inspection**  
+2. **Exploratory Data Analysis & Visualization**  
+3. **Data Splitting & Feature Scaling**  
+4. **Handling Class Imbalance (SMOTE)**  
+5. **Training & Hyperparameter Tuning (Logistic Regression)**  
+6. **Threshold Analysis**  
+7. **Final Evaluation Metrics**  
 
 ---
 
-## Dataset
+## 🗂 Dataset
 
-We use the publicly available [Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud) dataset, which contains transactions made by European cardholders in September 2013. The data has already been PCA-transformed for privacy; features `V1`–`V28` are principal components, plus:
+- File: `creditcard.csv`  
+- Contains 284,807 transactions (rows) with 30 features:  
+  - `Time`, `Amount`  
+  - `V1`–`V28` (anonymized principal components)  
+  - `Class` (0 = non-fraud, 1 = fraud)  
 
-- **Time**: seconds elapsed between this transaction and the first one in the dataset  
-- **Amount**: transaction amount in euros  
-- **Class**: target label (0 = genuine, 1 = fraud)
-
-Place the `creditcard.csv` file in the same directory as this notebook before running.
-
----
-# Credit Card Fraud Detection
-
-**Author:** IT21197246 – Abeykoon A.M.Y.V.B
+Place `creditcard.csv` in the same directory as the notebook before running.
 
 ---
 
-## Table of Contents
+## 🛠️ Requirements
 
-1. [Project Overview](#project-overview)  
-2. [Dataset](#dataset)  
-3. [Dependencies](#dependencies)  
-4. [Notebook Structure](#notebook-structure)  
-5. [Usage](#usage)  
-6. [Results & Insights](#results--insights)  
-7. [License](#license)
+- **Python** 3.8+  
+- **Libraries:**  
+  - pandas  
+  - numpy  
+  - matplotlib  
+  - seaborn  
+  - scikit-learn  
+  - imbalanced-learn  
 
----
+Install via:
 
-## Project Overview
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn
 
-This notebook walks through an end-to-end machine learning pipeline to detect fraudulent credit-card transactions. It covers:
+```
 
-- Data loading and exploratory analysis  
-- Handling class imbalance with SMOTE  
-- Feature scaling  
-- Training and hyperparameter tuning of a Logistic Regression model  
-- Threshold analysis and model evaluation  
-- Visualization of performance metrics (confusion matrix, ROC and precision–recall curves)
+### Usage
 
----
+1. Clone this repo
 
-## Dataset
+2. Download creditcard.csv and place it alongside the notebook
 
-We use the publicly available [Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud) dataset, which contains transactions made by European cardholders in September 2013. The data has already been PCA-transformed for privacy; features `V1`–`V28` are principal components, plus:
+3. Install dependencies (see above)
 
-- **Time**: seconds elapsed between this transaction and the first one in the dataset  
-- **Amount**: transaction amount in euros  
-- **Class**: target label (0 = genuine, 1 = fraud)
+4. Launch Jupyter Notebook:
 
-Place the `creditcard.csv` file in the same directory as this notebook before running.
+```bash
+jupyter notebook creadit_card_fraud.ipynb
+```
 
----
+5. Run all cells to reproduce the analysis, plots, and metrics.
 
-## Dependencies
 
-This notebook was developed with Python 3.x and tested against the following packages:
-
-- `pandas`  
-- `numpy`  
-- `matplotlib`  
-- `seaborn`  
-- `scikit-learn`  
-- `imbalanced-learn`
-  
